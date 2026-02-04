@@ -34,6 +34,36 @@ console.log(arr);
 
 let student={
     name:"John",
-    age:31;
+    age:31
 }
+console.log(student.name);
+console.log(student.age);
+student.age=32;
+console.log(student.age);
+
+//Function
+function add(x,y){
+    return x+y;
+}
+console.log(add(10,20));
+
+//Arrow Function
+const multiply=(x,y)=>x*y;
+console.log("Arrow Function:",multiply(5,10));
+
+//date
+
+let today=new Date();
+console.log(today);
+
+//math
+console.log(Math.sqrt(16));
+console.log(Math.pow(2,3));
+console.log(Math.random());
+
+//String
+txt="Hello World";
+console.log(txt.length);
+console.log(txt.toUpperCase());
+console.log(txt.includes("html"));
 
