@@ -67,3 +67,9 @@ console.log(txt.length);
 console.log(txt.toUpperCase());
 console.log(txt.includes("html"));
 
+//TypeConversion
+
+let strnum="1021";
+let convert=Number(strnum);
+console.log(convert+10);
+
