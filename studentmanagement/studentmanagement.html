@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Management</h1>
+    <button onclick="addStudent()">Add Student</button>
+    <button onclick="removeStudent()">Remove Student</button>
+    <button onclick="updateStudent()">Update Student</button>
+    <ul id="studentList"></ul>
+    <script>
+    let students = [ ];
+    let studentList = document.getElementById("studentList");
+    function displayStudents() {
+        studentList.innerHTML = "";
+        students.forEach(student => {
+            let li = document.createElement("li");
+            li.textContent = `${student.name} - Age: ${student.age}, Grade: ${student.grade}`;
+            studentList.appendChild(li);
+        });
+    }
+    function addStudent() {
+        let name = prompt("Enter student name:");
+        let age = prompt("Enter student age:");
+        let grade = prompt("Enter student grade:");
+        students.push({ name, age, grade });
+        displayStudents();
+    }
+    function removeStudent() {
+        let name = prompt("Enter student name to remove:");
+        students = students.filter(student => student.name !== name);
+        displayStudents();
+    }
+    function updateStudent() {
+        let name = prompt("Enter student name to update:");
+        let student = students.find(student => student.name === name);
+        if (student) {
+            let age = prompt("Enter new age:");
+            let grade = prompt("Enter new grade:");
+            student.age = age;
+            student.grade = grade;
+            displayStudents();
+        } else {
+            alert("Student not found!");
+        }
+    }
+    </script>
+    
+    
+</body>
+</html>
